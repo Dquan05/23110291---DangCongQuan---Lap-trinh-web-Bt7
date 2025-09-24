@@ -1,0 +1,21 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{admin/Layout-admin.html}">
+<body>
+<section class="row" layout:fragment="content">
+    <div class="col mt-4">
+        <h3>Category list (with layout)</h3>
+        <table class="table table-striped">
+            <thead><tr><th>ID</th><th>Name</th></tr></thead>
+            <tbody>
+            <tr th:each="c : ${categories}">
+                <td th:text="${c.categoryId}">1</td>
+                <td th:text="${c.categoryName}">Name</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+</body>
+</html>
